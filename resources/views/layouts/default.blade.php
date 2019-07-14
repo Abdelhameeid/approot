@@ -252,9 +252,11 @@ desired effect
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="<?php  Auth::logout(); ?>
-" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-default btn-flat">Sign out</a>
                 </div>
+                <form style="display:none;" id="logout-form" method="POST" action="{{ route('logout') }}">
+                  @csrf
+                </form>
               </li>
             </ul>
           </li>

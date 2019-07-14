@@ -29,6 +29,7 @@ class serviseController extends Controller
     public function index()
     {
           $user=Auth::user();
+        //   return $user;
          $services  = Service::all();
         return view('dashboard.service.index', compact('services','user'));
     }
